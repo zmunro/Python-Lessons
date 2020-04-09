@@ -1,0 +1,184 @@
+Python Lab 1: Variables, Data Types and Data Structures
+
+- Variables in Python are similar to variables in math class, they are just a symbol/word that
+	represents a value that you assign to it.
+
+
+
+- You assign a value to a variable using the "=" operator
+	For example:
+		big_number = 500
+		x = 12
+		my_first_name = "zach"
+
+
+- Variable naming rules:
+	- A variable name must start with a letter or the underscore character
+	- A variable name cannot start with a number
+	- A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+	- Variable names are case-sensitive (age, Age and AGE are three different variables)
+
+- In Python, it is good practice to usually name variables with all lowercase letters, and
+	separate words with underscores.
+
+
+
+- There are many types of variables in Python, but a few of these types are similar across
+	most programming languages and they will be the ones we focus on today:
+	- strings
+	- booleans
+	- integers
+	- floats
+	- Lists
+	- Tuples
+	- Sets
+	- Dictionaries
+
+
+
+- Python data types are (for the most part) implied
+	- if I write `x=7` then `type(x)` will be `int`
+	- if I write `y="7"` then `type(y)` will be `str` (string)
+
+
+
+Now what are these types:
+	- strings
+		- a set of characters, like a word, a sentence, the contents of a text file, etc.
+		- e.g. "bob", "seven", "social distancing"
+		- endless possibilities, hours of fun for the whole family
+
+	- booleans
+		- True or False
+		- only those two options
+		- nothing else
+
+	- integers
+		- any integer
+		- e.g. -542, 0, 420
+
+	- floats
+		- also known as "floating point numbers"
+		- name comes from the fact that there is a decimal point "floating" somewhere in the number
+		- e.g. 3.14, 62.445, 12345.678
+
+	- Lists
+		- also referred to as "arrays" in other languages
+		- mutable data type, meaning a list can be changed after it is created
+		- it is an ordered collection of variables that can be any type
+		- elements in a list are separated by commas
+		- e.g. [1, 2, 3, 4]
+			   ["a", "b", "c", "d"]
+			   [1, "a", 2, "b", 3, "c"]
+			   [True, False, True, True, False, "7"]
+		- we get things out of lists by "indexing" them, similar to how you index cells in a
+			spreadhsheet column or row
+		- In python (and most coding languages), the first element is indexed by 0
+			- foo = ["a", "b", "c"]
+			- foo[0] is "a"
+			  foo[1] is "b"
+			  foo[2] is "c"
+
+
+	- Tuples
+		- similar to lists except they are immutable, meaning you cannot change a tuple once you
+			have created it; no adding or deleting elements
+		- tuples can be indexed the same way lists can
+		- i.e. (4, 5, 6)
+
+	- Sets
+		- a mutable, unordered collection of unique items
+		- i.e. {7,3,8} == {8, 3, 7}
+		- sets cannot be indexed since there is no ordering
+
+	- Dictionaries
+		- very similar to what dictionaries in real life, except that they are unordered
+		- these are "key-value" stores, they are a collection of keys and values where the
+			values can be anything but the keys need to be immutable
+		- reminder: immutable types are: integers, floats, strings, tuples
+		- the keys in dictionaries are usually strings
+		- {"a": 1, "b": 2, "c": 3}
+		- we index dictionaries similar to how we index lists:
+			- foo = {"a": 1, "b": 2, "c": 3}
+			- foo["a"] is 1
+
+
+
+- Variables can often be easily converted from one type to another by "casting":
+	- x = 7
+	- type(x) is int
+	- y = str(x)
+	- type(y) is str
+	- foo = [1,2,3]
+	- type(foo) is list
+	- set(foo) is set
+	- tuple(foo) is tuple
+
+
+- Here you can see the built in functions str(), set(), and tuple() which converte variables to
+	their respective type
+	- a "built in function" is what we call functions that are always available for you to use in a
+		language
+	- we saw one at the beginning of this lesson when I used type() to find the type of a variable
+
+
+Task:
+	Create a dictionary where the keys are the names of the different types and the values are an
+		example of that type.
+	I'll give you the first as an example:
+	foo = {"integer": 4}
+
+	NOTES:
+		- the number of elements in your tuple element needs to be at least 2
+		- the keys in your dictionary should be Strings of the following words exactly as they are
+			typed here:
+			- integer
+			- float
+			- list
+			- tuple
+			- dictionary
+			- set
+			- boolean
+			- string
+
+
+How to get started:
+	- Go to https://repl.it/languages/python3
+	- Copy the code below into that page and put your dictionary where it says "my_dictionary = "
+	- Click "Run" in the top left of the screen, if your dictionary is correct then the text
+		"Dictionary is valid!" should appear on the bottom of the screen
+
+Code:
+
+def check_dict(answer_dict):
+    verify_dict = {
+        "integer": "<class 'int'>",
+        "float": "<class 'float'>",
+        "list": "<class 'list'>",
+        "tuple": "<class 'tuple'>",
+        "dictionary": "<class 'dict'>",
+        "set": "<class 'set'>",
+        "boolean": "<class 'bool'>",
+        "string": "<class 'str'>"
+    }
+	if set(answer_dict.keys()) != set(verify_dict.keys()):
+		print("Check your dictionary's keys, something doesn't look right")
+		return
+	dict_correct = True
+	for key,value in answer_dict.items():
+		if verify_dict[key] == str(type(value)):
+			print(f"Provided {key} is valid...")
+		else:
+			dict_correct = False
+			print(f"Provided {key} is not of type {key}...")
+    if dict_correct:
+		print("Dictionary is valid!")
+    else:
+        print("Provided dictionary is invalid. Try again.")
+
+
+my_dictionary = {
+	"integer": 4,
+	
+}
+check_dict(my_dictionary)
