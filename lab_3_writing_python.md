@@ -23,7 +23,7 @@ which stands for:
 user @ name-of-computer: path to your current folder/directory
 ```
 
-**Note**: The words "folder" and "directory" are synonymous \
+**Note**: The words "folder" and "directory" are synonymous
 
 ### <u> Basic Commands </u>
 
@@ -132,18 +132,36 @@ python3 my_script.py
 ```
 **Note**: you may need to substitute `python3` for just `python` depending on how you installed it.
 
+---
 
-Task: Write a choose your own adventure game in your script with at least 3 steps
-**Note**: to get input from the user use the input() function like so
+## Task 1: Write a choose your own adventure game!
 
+Try to write a short "choose your own adventure" game in a script that you can run on your computer. The only requirements are for there to be at least 2 IF/else statements (so a very short game).
+
+To get input from the user, you will need to use the `input()` function like so:
 ```
 name = input("What is your name: ")
 ```
 
-This will then display on the command line, when you run your program:
+When you run your code, the command line will say:
 
 ```
 What is your name:
 ```
+And you can type your input and hit Enter and your program will continue on, now having your response stored as a string in the `name` variable in your code.
 
-Task 2: Practice Problems on https://codingbat.com/python
+
+Example of the beginning of a game:
+```
+name = input("What is your name: ")
+
+print("hello " + name)
+
+print("You wake up in a dimly lit room, there is a door.")
+direction = input("Would you like to go through the door?(y\\n) ")
+```
+
+**Note**: you can see in the code above that I added two strings together using the `+` operator
+
+---
+### Task 2: Practice Problems on https://codingbat.com/python
