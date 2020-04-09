@@ -105,7 +105,7 @@ The last print statement is **not indented at all**, so it is seperate from the 
 
 ---
 
-## Task: Write and run a Python Script
+## Example: Write and run a Python Script
 
 To get started writing your first Python Script create a file with the `.py` extension. Let's call it `my_script.py` and let's place it on your desktop.
 ```
@@ -132,5 +132,18 @@ python3 my_script.py
 ```
 **Note**: you may need to substitute `python3` for just `python` depending on how you installed it.
 
-If this prints out "hello world!" then everything worked!
 
+Task: Write a choose your own adventure game in your script with at least 3 steps
+**Note**: to get input from the user use the input() function like so
+
+```
+name = input("What is your name: ")
+```
+
+This will then display on the command line, when you run your program:
+
+```
+What is your name:
+```
+
+Task 2: Practice Problems on https://codingbat.com/python
