@@ -1,4 +1,4 @@
-# Lab 2: Writing Python Scripts and the Command Line
+# Lab 3: Writing Python Scripts and the Command Line
 
 ## <u> The Command Line </u>
 
