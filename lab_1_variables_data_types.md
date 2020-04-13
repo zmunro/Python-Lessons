@@ -21,9 +21,17 @@ my_first_name = "zach"
 
 In Python, it is good practice to name variables with **all lowercase letters**, and separate words with underscores. For example:
 
-BAD: <br> `myFirstName = "bill"`
+BAD:
 
-GOOD: <br> `my_first_name = "bill"`
+```python
+myFirstName = "bill"
+```
+
+GOOD:
+
+```python
+my_first_name = "bill"`
+```
 
 ### <u>Variable Types</u>
 
