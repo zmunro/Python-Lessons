@@ -30,7 +30,7 @@ myFirstName = "bill"
 GOOD:
 
 ```python
-my_first_name = "bill"`
+my_first_name = "bill"
 ```
 
 ### <u>Variable Types</u>
