@@ -85,7 +85,9 @@ $ 9
 
 ## <u>Scope</u>
 
-In the body of the function, we only have access to variables passed into the function(`x` and `y`) as well as any variables that are defined **globally** in our program, meaning they are not inside any function (**it is not good practice to have global variables**). If there is a global variable named `x` and then we have a function that takes an argument that is named `x`, then when the function get's called, the `x` from the function's argument will take precedence over the value of `x` defined globally. This can get confusing, so it is a good idea to **AVOID GLOBAL VARIABLES**. For example, look at the following code:
+In a function, you only have access to variables passed into the function, as well as any variables that are defined **globally** in your program, meaning they are defined outside of the functions (**it is not good practice to have global variables**). If there is a global variable called `name` and then we have a function that takes an argument that is called `name`, then when the function get's called, it is not clear which will be the value of `name` inside the function; will it be the value of the global variable called `name` or the value of whatever was passed to the function?
+
+The answer is that the `name` variable from the function's argument will take precedence over the value of the global variable called `name`. This can get confusing, so it is a good idea to **NOT USE GLOBAL VARIABLES**. For an example of confusing usage of global variables, look at the following code:
 
 ```python
 name = "billy"
@@ -98,19 +100,39 @@ def greet_person(name):
 greet_person("Zach")
 ```
 
-You can see in the above code that we have a global variable called `name` that has the value `"billy"`. The function `greet_person()` takes one argument that it calls `name`.
+You can see in the above code that we have a global variable called `name` that has the value `"billy"`. The function `greet_person()` takes one argument that it calls `name`. Inside the function `greet_person()` the `name` variable will refer to the value passed in as the argument to that function, NOT the global variable.
 The above code will have the following output:
 
 ```
 $ Hello Zach!
 ```
 
-We refer to variable `name` at the top of the file as having a "**global scope**" as it is available globally throughout the file. Variables defined within a function are only able to be used inside that function, and so their scope is limited to that of the function they are defined inside of. If you try to refer to a variable outside of its scope, you will get an error saying that the variable has not been defined. Take a look at the following BAD code:
+Let's look at another example of confusing global variable usage:
+
+```python
+
+generic_greeting = "Hello"
+
+def greet_person(name):
+    phrase = generic_greeting + " " + name + "!"
+    print(phrase)
+
+
+greet_person("Zach")
+```
+
+In the above code, we are able to reference the global variable `generic_greeting` inside of the `greet_person()` function, since the variable is defined globally. Again, **do not do this**, it is bad practice since it gets very confusing very quickly.
+
+We refer to variable `generic_greeting` in the above code snippet as having a "**global scope**" as it is available globally throughout the file.
+
+Variables defined within a function are only able to be used **inside that function**, so we say their scope is limited to that of the function they are defined inside of. If you try to refer to a variable outside of its scope, you will get an error saying that the variable has not been defined.
+
+The following code is BAD and will return an error since it tries to refer to a variable outside of the scope in which it was defined:
 
 ```python
 (1) def greet_person(name):
-(2)   greeting = "Hello " + name + "!"
-(3)    print(greeting)
+(2)     greeting = "Hello " + name + "!"
+(3)     print(greeting)
 (4)
 (5) print(greeting)
 ```
